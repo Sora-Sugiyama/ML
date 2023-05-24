@@ -3,6 +3,7 @@
 
 #include "matrix.h"
 
+// "Linear Reg"
 vecd GradientDescent(mat A,mat b,mat x,int n){
     b=Trans(b);x=Trans(x);
     while(n--){
