@@ -1,9 +1,11 @@
 #ifndef LRC_H_INCLUDED
 #define LRC_H_INCLUDED
 
+// last update 2023-05-25
+// Written by Sora-Sugiyama
+
 #include "matrix.h"
 
-// "Linear Reg"
 vecd GradientDescent(mat A,mat b,mat x,int n){
     b=Trans(b);x=Trans(x);
     while(n--){
