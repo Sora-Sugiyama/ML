@@ -6,14 +6,15 @@
 
 #include "matrix.h"
 
-mat GradientDescent(mat A,mat b,mat x,int n){
+mat GradientDescent(mat w,mat b,mat x,int n){
+    mat r,rT;
     while(n--){
-        mat r=Subtract(b,Product(A,x));
-        mat rT=Trans(r);
-        double gamma=Product(r,rT)[0][0]/Product(rT,Product(A,r))[0][0];
-        x=Sum(x,ScharProduct(gamma,r));
+        r=Subtract(Product(x,w),b);rT=Trans(r);
+        double alpha=0.00003;
+        w=Subtract(w,ScharProduct(2*alpha,Product(Trans(x),r)));
+        if(Product(r,rT)[0][0]<1)break;
     }
-    return x;
+    return w;
 }
 
 #endif // LRC_H_INCLUDED
