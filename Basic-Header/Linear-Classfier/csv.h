@@ -8,6 +8,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+using namespace std;
 
 vector<vector<string> >csvReader(string path,char deli,bool Header){
     ifstream file(path);
