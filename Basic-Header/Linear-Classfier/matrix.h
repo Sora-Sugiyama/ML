@@ -1,7 +1,7 @@
 #ifndef MATRIX_H_INCLUDED
 #define MATRIX_H_INCLUDED
 
-// 2023 - 05 - 24
+// 2023 - 05 - 26
 // Written by Sora Sugiyama
 
 #include <iostream>
