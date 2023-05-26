@@ -1,19 +1,21 @@
 #ifndef LRC_H_INCLUDED
 #define LRC_H_INCLUDED
 
-// last update 2023-05-25
+// last update 2023-05-26
 // Written by Sora-Sugiyama
 
 #include "matrix.h"
+#include <iostream>
+#include <cmath>
 
 mat GradientDescent(mat w,mat b,mat x,int n){
     mat r,rT;
     while(n--){
         r=Subtract(Product(x,w),b);rT=Trans(r);
-        double alpha=0.00003;
+        double alpha=0.003/Product(rT,r)[0][0];
         w=Subtract(w,ScharProduct(2*alpha,Product(Trans(x),r)));
-        if(Product(r,rT)[0][0]<1)break;
     }
+    cout<<"Loss : "<<Product(rT,r)[0][0]<<"\n";
     return w;
 }
 
