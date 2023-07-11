@@ -11,16 +11,6 @@ using namespace std;
 using mat=vector<vector<double> >;
 using vecd=vector<double>;
 
-vecd dot(vecd v,vecd u){
-    if(v.size()!=u.size()){
-        cout<<"Invalid value\n";
-        return v;
-    }
-    vecd ret=v;
-    for(int i=0;i<(int)v.size();i++)ret[i]+=u[i];
-    return ret;
-}
-
 mat Trans(mat A){
     int n=A.back().size(),m=A.size();
     mat ret(n,vecd(m,0));
