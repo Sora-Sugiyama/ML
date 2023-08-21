@@ -12,7 +12,7 @@ mat GradientDescent(mat w,mat b,mat x,int n){
     mat r,rT;
     while(n--){
         r=Subtract(Product(x,w),b);rT=Trans(r);
-        double alpha=0.003/Product(rT,r)[0][0];
+        alpha=0.0001;
         w=Subtract(w,ScharProduct(2*alpha,Product(Trans(x),r)));
     }
     cout<<"Loss : "<<Product(rT,r)[0][0]<<"\n";
